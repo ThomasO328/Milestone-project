@@ -13,7 +13,7 @@ const eventSchema = mongoose.Schema({
   name: String,
   likes: Number,
   duration: String,
-  date: String
+  date: String,
 })
 const Event = mongoose.model('Event', eventSchema)
 

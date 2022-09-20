@@ -4,6 +4,7 @@ import SearchList from './SearchList';
 
 function Search({details}) {
     const [searchField, setSearchField] = useState("");
+    const [searchShow, setSearchShow] = useState(false)
 
     const filteredEvent = details.filter(
         event=> {
@@ -15,14 +16,22 @@ function Search({details}) {
 
     const handleChange = e => {
         setSearchField(e.target.value)
+        if(e.target.value===""){
+            setSearchShow(false)
+        }
+        else{
+            setSearchShow(true)
+        }
     }
     
     function searchList() {
-        return(
-            <Scroll>
-                <SearchList filteredEvent = {filteredEvent} />
-            </Scroll>
-        )
+        if(searchShow){
+            return(
+                <Scroll>
+                    <SearchList filteredEvent = {filteredEvent} />
+                </Scroll>
+            )
+        }
     }
 
     return(
