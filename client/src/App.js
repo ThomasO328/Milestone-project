@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react';
-import logo from "./logo.svg";
+// import logo from "./logo.svg";
 import "./App.css";
 import axios from 'axios';
+import React from 'react';
+import Data from './data/EventData'
+import Search from './components/Search'
 
 function App() {
   const [data, setData] = useState(null);
@@ -13,12 +16,10 @@ function App() {
     });
   }, []);
 
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>{!data ? "Loading..." : data}</p>
-      </header>
+    <div className='tc bg-green ma0 pa4 min-vh-100'>
+      <Search details={Data}/>
     </div>
   );
 }
