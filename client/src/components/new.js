@@ -51,7 +51,7 @@ export default function AddEvent({setCurrentLink}) {
     end: "",
   });
 
-  const { eventname, description, start, end } = events;
+  const { eventname, description, start, end, date } = events;
 
   const onInputChange = (e) => {
     setEvent({ ...events, [e.target.name]: e.target.value });
@@ -72,7 +72,7 @@ export default function AddEvent({setCurrentLink}) {
           <form onSubmit={(e) => onSubmit(e)}>
             <div className="mb-3">
               <label htmlFor="Eventname" className="form-label">
-                Event Name
+                Event Name:
               </label>
               <input
                 type={"text"}
@@ -85,7 +85,7 @@ export default function AddEvent({setCurrentLink}) {
             </div>
             <div className="mb-3">
               <label htmlFor="Description" className="form-label">
-                Description
+                Description:
               </label>
               <input
                 type={"text"}
@@ -98,7 +98,7 @@ export default function AddEvent({setCurrentLink}) {
             </div>
             <div className="mb-3">
               <label htmlFor="Start" className="form-label">
-                Start Time
+                Start Time:
               </label>
               <input
                 type={"text"}
@@ -111,7 +111,7 @@ export default function AddEvent({setCurrentLink}) {
             </div>
             <div className="mb-3">
               <label htmlFor="End" className="form-label">
-                End Time
+                End Time:
               </label>
               <input
                 type={"text"}
@@ -119,6 +119,19 @@ export default function AddEvent({setCurrentLink}) {
                 placeholder="Enter End Time"
                 name="end"
                 value={end}
+                onChange={(e) => onInputChange(e)}
+              />
+              </div>
+              <div className="mb-3">
+              <label htmlFor="Date" className="form-label">
+                Date:
+              </label>
+              <input
+                type={"Date"}
+                className="form-control"
+                placeholder="Enter Date"
+                name="date"
+                value={date}
                 onChange={(e) => onInputChange(e)}
               />
             </div>

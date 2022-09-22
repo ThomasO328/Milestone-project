@@ -1,6 +1,13 @@
 import React from 'react'
 import Search from './Search'
 import Data from '../data/EventData'
+import axios from "axios";
+
+const getData = async() => {
+    try{
+        const response = await axios.get()
+    }
+}
 
 function SearchPage() {
     return(
