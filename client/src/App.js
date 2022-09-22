@@ -5,12 +5,14 @@ import axios from 'axios';
 import React from 'react';
 import Data from './data/EventData'
 import Search from './components/Search'
-import Home from './components/Home'
-// import AddEvent from './components/new';
+import AddEvent from "./components/new"
+import Dummy1 from "./components/Dummy1"
+import Dummy2 from "./components/Dummy2"
 // import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   const [data, setData] = useState(null);
+  const [currentLink, setCurrentLink] = useState('Homepage')
 
   useEffect(() => {
     axios.get("/events").then((response) => {
@@ -44,11 +46,33 @@ function App() {
 
 
   return (
-    <Home>
-      <div className='tc bg-green ma0 pa4 min-vh-100'>
-        <Search details={Data}/>
-      </div>
-    </Home>
+    <div> 
+      <ul>
+        <li onClick={() => setCurrentLink('Homepage')}>Home Page</li>
+        <li onClick={() => setCurrentLink('Eventpage')}>Add Events Page</li>
+        <li onClick={() => setCurrentLink('Searchpage')}>Search Events</li>
+      </ul>
+      {
+        currentLink === "Homepage" && (
+        <div>
+          <h4>Welcome To Our Events Page</h4> 
+          <h3>The Place For All Your Favorite Events</h3> 
+        </div>
+        )
+      }
+      {
+        currentLink === "Eventpage" && (
+          // <AddEvent />
+          <Dummy1 />
+        )
+      }
+      {
+        currentLink === "Searchpage" && (
+          //  <Search />
+          <Dummy2 />
+        )
+      }
+    </div>
   );
 }
 
