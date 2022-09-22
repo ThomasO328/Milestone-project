@@ -1,13 +1,12 @@
 import React, {useState} from 'react';
 import Scroll from './Scroll'
 import SearchList from './SearchList';
-import Data from '../Data/EventData'
 
-function Search({Data}) {
+function Search({details}) {
     const [searchField, setSearchField] = useState("");
     const [searchShow, setSearchShow] = useState(false)
 
-    const filteredEvent = Data.filter(
+    const filteredEvent = details.filter(
         event=> {
             return(
                 event.name.toLowerCase().includes(searchField.toLowerCase())
@@ -46,7 +45,6 @@ function Search({Data}) {
             {searchList()}
         </section>
     )
-
 }
 
 export default Search;

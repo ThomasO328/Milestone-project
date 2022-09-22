@@ -4,7 +4,7 @@ import "./App.css";
 import axios from 'axios';
 import React from 'react';
 import Data from './data/EventData'
-import Search from './components/Search'
+import SearchPage from './components/SearchPage'
 import AddEvent from "./components/new"
 import Dummy1 from "./components/Dummy1"
 import Dummy2 from "./components/Dummy2"
@@ -20,30 +20,6 @@ function App() {
       setData(response.data.events);
     });
   }, []);
-
-//   useEffect
-//   axios.post('/', (req, res) => {
-//     if (req.body.pic === '') { req.body.pic = undefined }
-//     if (req.body.city === '') { req.body.city = undefined }
-//     if (req.body.state === '') { req.body.state = undefined }
-//     db.Event.create(req.body)
-//         .then(() => {
-//             res.redirect('/events')
-//         })
-//         .catch(err => {
-//             if (err && err.name == 'ValidationError') {
-//                 let message = 'Validation Error: '
-//                 for (var field in err.errors) {
-//                     message += `${field} was ${err.errors[field].value}. ${err.errors[field].message}\n`
-//                 }
-//                 res.render('events/new', { message })
-//             }
-//             else {
-//                 res.render('error404')
-//             }
-//         })
-// })
-
 
   return (
     <div> 
@@ -63,13 +39,12 @@ function App() {
       {
         currentLink === "Eventpage" && (
           // <AddEvent />
-          <AddEvent />
+          <AddEvent setCurrentLink={setCurrentLink}/>
         )
       }
       {
         currentLink === "Searchpage" && (
-            <Search details={Data}/>
-          
+            <SearchPage/>
         )
       }
     </div>

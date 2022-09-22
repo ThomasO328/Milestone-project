@@ -11,9 +11,10 @@ mongoose.connect(process.env.mongo_URI, () => {
 })
 const eventSchema = mongoose.Schema({
   name: String,
-  likes: Number,
-  duration: String,
-  date: String,
+  decription: Number,
+  start_time: String,
+  end_time: String,
+  date: Date,
 })
 const Event = mongoose.model('Event', eventSchema)
 
@@ -35,6 +36,18 @@ app.get('/events', async (req, res) => {
   res.json({
     events: events
   })
+})
+
+app.post('/events', async (req ,res) => {
+  const {eventname, description, start, end} = req.body
+  await Event.create({
+    name: eventname,
+    decription: description,
+    start_time: start,
+    end_time: end,
+    date: new Date(),
+  })
+  res.send('success')
 })
 
 app.get('/add', async (req, res) => {
