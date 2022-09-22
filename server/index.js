@@ -37,6 +37,14 @@ app.get('/events', async (req, res) => {
   })
 })
 
+app.get('/add', async (req, res) => {
+  const events = await Event.find()
+  res.json({
+    events: events
+  })
+})
+
+
   // app.get('*', (req,res) => {
   //     res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
   // });

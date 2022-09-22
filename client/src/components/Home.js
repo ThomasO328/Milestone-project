@@ -5,11 +5,11 @@ function Home(html) {
     return(
         <html>
         <head> 
-            <link rel="stylesheet" href="login.js" type="text/Javascript"/>
-            <link rel="stylesheet" href="index.css"/>
+            {/* <link rel="stylesheet" href="login.js" type="text/Javascript"/>
+            <link rel="stylesheet" href="index.css"/> */}
         </head>
         <body>
-            <img src="../assets/hd-wallpaper-g5d67ad6f6_1920.jpg" alt=""/>
+            {/* <img src="./assets/hd-wallpaper-g5d67ad6f6_1920.jpg" alt=""/> */}
             <ul>
                 <li><a href="#Sport NFL&NHL">Sport NFL&NHL</a></li>
                 <li><a href="#Festivals Around Vegas">Festivals Around Vegas</a></li>
