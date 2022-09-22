@@ -63,13 +63,13 @@ function App() {
       {
         currentLink === "Eventpage" && (
           // <AddEvent />
-          <Dummy1 />
+          <AddEvent />
         )
       }
       {
         currentLink === "Searchpage" && (
-          //  <Search />
-          <Dummy2 />
+            <Search details={Data}/>
+          
         )
       }
     </div>
