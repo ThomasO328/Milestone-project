@@ -42,10 +42,10 @@ app.post('/events', async (req ,res) => {
   const {eventname, description, start, end} = req.body
   await Event.create({
     name: eventname,
-    decription: description,
+    description: description,
     start_time: start,
     end_time: end,
-    date: new Date(),
+    date: Date(),
   })
   res.send('success')
 })

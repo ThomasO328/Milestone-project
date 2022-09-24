@@ -1,44 +1,4 @@
-// import react from "react";
 import "./new.css";
-
-// const AddEvent = () => {
-//     const submitHandler = () => {
-//       // method="POST" action="/events"
-//     }
-
-//     return (
-//         <main>
-//           <h1>Add a New Event</h1>
-//           <form onSubmit={submitHandler}>
-//             <div className="form-group">
-//               <label htmlFor="name">Event Name</label>
-//               <input className="form-control" id="name" name="name" required />
-//             </div>
-//             <div className="form-group">
-//               <label htmlFor="description">Description</label>
-//               <input className="form-control" id="description" name="description" required />
-//             </div>
-//             <div className="form-group">
-//               <label htmlFor="start">Start Time</label>
-//               <input className="form-control" id="start" name="start" required />
-//             </div>
-//             <div className="form-group">
-//               <label htmlFor="end">End Time</label>
-//               <input className="form-control" id="end" name="end" required />
-//             </div>
-//             <div className="form-group">
-//               <label htmlFor="date">Date</label>
-//               <input className="form-control" id="date" name="date" required />
-//             </div>
-//             <input className="btn btn-primary" type="submit" value="Add Event" />
-//         </form>
-  
-//         </main>
-//     )
-//   }
-  
-//   export default AddEvent
-
 import axios from "axios";
 import React, { useState } from "react";
 export default function AddEvent({setCurrentLink}) {
@@ -66,7 +26,7 @@ export default function AddEvent({setCurrentLink}) {
     
     <div className="container">
       <div className="row">
-        <div className="col-md-6 offset-md-3 border rounded p-4 mt-2 shadow">
+        <div>
           <h2 className="header">Add Event</h2>
           <form onSubmit={(e) => onSubmit(e)}>
             <div className="name">
@@ -83,7 +43,7 @@ export default function AddEvent({setCurrentLink}) {
               />
             </div>
             <div className="description">
-              <label htmlFor="Description" className="form-label">
+              <label htmlFor="description" className="form-label">
                 Description:
               </label>
               <input

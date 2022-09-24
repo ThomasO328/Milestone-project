@@ -6,8 +6,8 @@ import React from 'react';
 import Data from './data/EventData'
 import SearchPage from './components/SearchPage'
 import AddEvent from "./components/new"
-import Dummy1 from "./components/Dummy1"
-import Dummy2 from "./components/Dummy2"
+import SeeEvents from "./components/Show"
+
 // import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -27,6 +27,7 @@ function App() {
         <li onClick={() => setCurrentLink('Homepage')}>Home Page</li>
         <li onClick={() => setCurrentLink('Eventpage')}>Add Events Page</li>
         <li onClick={() => setCurrentLink('Searchpage')}>Search Events</li>
+        {/* <li onClick={() => setCurrentLink('SeeEvents')}>See Events</li> */}
       </ul>
       {
         currentLink === "Homepage" && (
@@ -42,6 +43,12 @@ function App() {
           <AddEvent setCurrentLink={setCurrentLink}/>
         )
       }
+            {/* {
+        currentLink === "SeeEvents" && (
+          // <SeeEvents />
+          <SeeEvents setCurrentLink={setCurrentLink}/>
+        )
+      } */}
       {
         currentLink === "Searchpage" && (
             <SearchPage/>
