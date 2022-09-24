@@ -22,7 +22,7 @@ function App() {
   }, []);
 
   return (
-    <div> 
+    <div className='main'> 
       <ul>
         <li onClick={() => setCurrentLink('Homepage')}>Home Page</li>
         <li onClick={() => setCurrentLink('Eventpage')}>Add Events Page</li>

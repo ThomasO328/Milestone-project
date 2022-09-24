@@ -11,7 +11,7 @@ mongoose.connect(process.env.mongo_URI, () => {
 })
 const eventSchema = mongoose.Schema({
   name: String,
-  decription: Number,
+  description: String,
   start_time: String,
   end_time: String,
   date: Date,

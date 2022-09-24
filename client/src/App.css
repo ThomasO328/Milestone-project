@@ -105,3 +105,8 @@ h4 {
   
     font-size: 60px;
 }
+
+.main {
+  background-color: royalblue;
+  min-height: 100vh;
+}

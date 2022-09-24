@@ -1,10 +1,30 @@
-h1 {
-    text-align: center;
-    margin-top: 200px;
-    font-size: 70px;
-  }
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 150px;
+  margin-right: 20px;
+}
 
-  
+.header {
+  text-align: center;
+  font-size: 4em;
+  font-style: oblique;
+}
 
-  
- 
+.form-label {
+  font-size: 2em;
+  display: inline-block;
+}
+
+input {
+  box-sizing: border-box;
+  padding: 6px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  border: rgb(241, 152, 152) 3px solid;
+  width: 20em;
+}
+.form-control {
+  display: inline-block;
+  text-align: center;
+}

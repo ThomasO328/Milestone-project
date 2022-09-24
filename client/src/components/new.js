@@ -1,5 +1,5 @@
 // import react from "react";
-// import "./new.css";
+import "./new.css";
 
 // const AddEvent = () => {
 //     const submitHandler = () => {
@@ -41,7 +41,6 @@
 
 import axios from "axios";
 import React, { useState } from "react";
-
 export default function AddEvent({setCurrentLink}) {
 
   const [events, setEvent] = useState({
@@ -64,13 +63,13 @@ export default function AddEvent({setCurrentLink}) {
   };
 
   return (
+    
     <div className="container">
       <div className="row">
         <div className="col-md-6 offset-md-3 border rounded p-4 mt-2 shadow">
-          <h2 className="text-center m-4">Add Event</h2>
-
+          <h2 className="header">Add Event</h2>
           <form onSubmit={(e) => onSubmit(e)}>
-            <div className="mb-3">
+            <div className="name">
               <label htmlFor="Eventname" className="form-label">
                 Event Name:
               </label>
@@ -83,7 +82,7 @@ export default function AddEvent({setCurrentLink}) {
                 onChange={(e) => onInputChange(e)}
               />
             </div>
-            <div className="mb-3">
+            <div className="description">
               <label htmlFor="Description" className="form-label">
                 Description:
               </label>
@@ -91,12 +90,12 @@ export default function AddEvent({setCurrentLink}) {
                 type={"text"}
                 className="form-control"
                 placeholder="Enter Brief Description"
-                name="Description"
+                name="description"
                 value={description}
                 onChange={(e) => onInputChange(e)}
               />
             </div>
-            <div className="mb-3">
+            <div className="start">
               <label htmlFor="Start" className="form-label">
                 Start Time:
               </label>
@@ -109,7 +108,7 @@ export default function AddEvent({setCurrentLink}) {
                 onChange={(e) => onInputChange(e)}
               />
             </div>
-            <div className="mb-3">
+            <div className="end">
               <label htmlFor="End" className="form-label">
                 End Time:
               </label>
@@ -122,7 +121,7 @@ export default function AddEvent({setCurrentLink}) {
                 onChange={(e) => onInputChange(e)}
               />
               </div>
-              <div className="mb-3">
+              <div className="start">
               <label htmlFor="Date" className="form-label">
                 Date:
               </label>
@@ -135,7 +134,7 @@ export default function AddEvent({setCurrentLink}) {
                 onChange={(e) => onInputChange(e)}
               />
             </div>
-            <button type="submit" className="btn btn-outline-primary">
+            <button type="submit" className="btn">
               Submit
             </button>
           </form>
